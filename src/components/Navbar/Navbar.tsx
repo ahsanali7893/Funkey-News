@@ -5,7 +5,7 @@ type Props = {};
 const Navbar = (props: Props) => {
   return (
     <>
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto py-3">
         <nav className="border-gray-200 px-2 mb-10">
           <div className="container mx-auto flex flex-wrap items-center justify-between">
             <span className="self-center text-lg font-semibold whitespace-nowrap">
@@ -13,10 +13,7 @@ const Navbar = (props: Props) => {
             </span>
             <div className="flex md:order-2">
               <div className="relative mr-3 md:mr-0 hidden md:block">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                
-                </div>
-              
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"></div>
               </div>
               <button
                 data-collapse-toggle="mobile-menu-3"
@@ -57,19 +54,18 @@ const Navbar = (props: Props) => {
               id="mobile-menu-3"
             >
               <ul className="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
-                
-                 
-                    <Select
-                      label=""
-                      placeholder="Pick one"
-                      data={[
-                        { value: "react", label: "React" },
-                        { value: "ng", label: "Angular" },
-                        { value: "svelte", label: "Svelte" },
-                        { value: "vue", label: "Vue" },
-                      ]}
-                    />
-                  
+                <Select
+                className="w-24 h-7"
+                  label=""
+                  placeholder="Pick one"
+                  data={[
+                    { value: "react", label: "React" },
+                    { value: "ng", label: "Angular" },
+                    { value: "svelte", label: "Svelte" },
+                    { value: "vue", label: "Vue" },
+                  ]}
+                />
+
                 <li>
                   <a
                     href="#"
@@ -106,7 +102,6 @@ const Navbar = (props: Props) => {
             href="#"
             target="_blank"
           ></a>
-          
         </p>
       </div>
 
