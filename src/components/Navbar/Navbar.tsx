@@ -5,8 +5,8 @@ type Props = {};
 const Navbar = (props: Props) => {
   return (
     <>
-      <div className="max-w-4xl mx-auto py-3">
-        <header className="text-gray-600 body-font">
+      <div className="max-w-4xl mx-auto ">
+        <header className="text-gray-600 body-font border-y shadow-sm shadow-orange-400 ">
           <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
             <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
               <span className="ml-3 text-xl">Funkey-News</span>
@@ -15,22 +15,22 @@ const Navbar = (props: Props) => {
               <li className="nav-item px-2">
                   Business
               </li>
-              <li className="nav-item">
+              <li className="nav-item px-2">
                   Entertainment
               </li>
-              <li className="nav-item">
+              <li className="nav-item px-2">
                   General
               </li>
-              <li className="nav-item">
+              <li className="nav-item px-2">
                   Health
               </li>
-              <li className="nav-item">
+              <li className="nav-item px-2">
                   Science
               </li>
-              <li className="nav-item">
+              <li className="nav-item px-2">
                   Sports
               </li>
-              <li className="nav-item">
+              <li className="nav-item px-2">
                   Technology
               </li>
             </nav>
