@@ -1,8 +1,14 @@
+import { ActionIcon, useMantineColorScheme, } from "@mantine/core";
+import {BsMoonStars, BsSun} from 'react-icons/bs'
 
 
 type Props = {};
 
 const Navbar = (props: Props) => {
+
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const dark = colorScheme === 'dark';
+  
   return (
     <>
       <div className="max-w-4xl mx-auto ">
@@ -37,13 +43,14 @@ const Navbar = (props: Props) => {
           </div>
         </header>
 
-        <p className="mt-5">
-          <a
-            className="text-blue-600 hover:underline"
-            href="#"
-            target="_blank"
-          ></a>
-        </p>
+        <ActionIcon
+      variant="outline"
+      color={dark ? 'yellow' : 'blue'}
+      onClick={() => toggleColorScheme()}
+      title="Toggle color scheme"
+    >
+      {dark ? <BsSun size="1.1rem" /> : <BsMoonStars size="1.1rem" />}
+    </ActionIcon>
       </div>
 
       <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
