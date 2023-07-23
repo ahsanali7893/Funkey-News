@@ -8,6 +8,7 @@ const Navbar = (props: Props) => {
 
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const dark = colorScheme === 'dark';
+
   
   return (
     <>

@@ -9,7 +9,7 @@ function App() {
     setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
   return (
     <>
-    <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>x
+    <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
     <MantineProvider theme={{ colorScheme: 'dark' }} withGlobalStyles withNormalizeCSS>
     <Navbar/>
     </MantineProvider>
