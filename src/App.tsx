@@ -1,12 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
+import { MantineProvider } from '@mantine/core';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (
     <>
+    <MantineProvider theme={{ colorScheme: 'dark' }} withGlobalStyles withNormalizeCSS>
     <Navbar/>
+    </MantineProvider>
     </>
   );
 }
