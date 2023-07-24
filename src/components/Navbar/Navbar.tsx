@@ -3,6 +3,7 @@ import { GiHamburgerMenu} from "react-icons/gi";
 
 import { ColorSchemeToggle } from "../common/ColorSchemeToggle";
 import { useState } from "react";
+import Dropdown from "./Dropdown";
 
 
 
@@ -37,42 +38,16 @@ export default function Navbar() {
   
   return (
     <>
-     <div className="max-w-6xl mx-auto mb-10">
+     <div className="max-w-6xl mx-auto">
         <Header height={HEADER_HEIGHT} className={`${classes.root} !border-b-0`} >
-          <div className="container mx-auto flex flex-wrap p-5 flex-col lg:flex-row items-center">
+          <div className="container mx-auto flex justify-between lg:flex-row border-b">
             <a className="flex title-font font-medium items-center  mb-4 md:mb-0">
               <span className="ml-3 text-xl">Funkey-News</span>
             </a>
-            <button
-              className={`md:hidden ${showMenu ? 'hidden' : 'block'}`}
-              onClick={toggleMenu}
-            >
-             
-              <GiHamburgerMenu size={24} color="blue" />
-            </button>
-            <nav className={`md:ml-auto flex flex-wrap items-center text-base justify-center list-none ${showMenu ? 'block' : 'hidden'}`}>
-              <li className="nav-item px-2">
-                Business
-              </li>
-              <li className="nav-item px-2">
-                Entertainment
-              </li>
-              <li className="nav-item px-2">
-                General
-              </li>
-              <li className="nav-item px-2">
-                Health
-              </li>
-              <li className="nav-item px-2">
-                Science
-              </li>
-              <li className="nav-item px-2">
-                Sports
-              </li>
-              <li className="nav-item px-2">
-                Technology
-              </li>
-              <div className="flex justify-end items-center text-sm">
+           
+            <nav className='md:ml-auto flex flex-wrap items-center text-base justify-center list-none'>
+              <Dropdown/>
+              <div className="flex justify-end  text-sm">
                 <div className="flex justify-start items-center mb-6  mr-4">
                   <ColorSchemeToggle />
                 </div>
