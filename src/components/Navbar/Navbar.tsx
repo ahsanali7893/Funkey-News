@@ -1,7 +1,8 @@
 import {  Header, createStyles, } from "@mantine/core";
-import { useHotkeys, useLocalStorage } from "@mantine/hooks";
+import { GiHamburgerMenu} from "react-icons/gi";
 
 import { ColorSchemeToggle } from "../common/ColorSchemeToggle";
+import { useState } from "react";
 
 
 
@@ -28,50 +29,58 @@ const useStyles = createStyles((theme) => ({
 export default function Navbar() {
   const { classes } = useStyles();
 
- 
+  const [showMenu, setShowMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
   
   return (
     <>
-      <div className="max-w-6xl mx-auto mb-10">
+     <div className="max-w-6xl mx-auto mb-10">
         <Header height={HEADER_HEIGHT} className={`${classes.root} !border-b-0`} >
           <div className="container mx-auto flex flex-wrap p-5 flex-col lg:flex-row items-center">
             <a className="flex title-font font-medium items-center  mb-4 md:mb-0">
               <span className="ml-3 text-xl">Funkey-News</span>
             </a>
-            <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center list-none ">
+            <button
+              className={`md:hidden ${showMenu ? 'hidden' : 'block'}`}
+              onClick={toggleMenu}
+            >
+             
+              <GiHamburgerMenu size={24} color="blue" />
+            </button>
+            <nav className={`md:ml-auto flex flex-wrap items-center text-base justify-center list-none ${showMenu ? 'block' : 'hidden'}`}>
               <li className="nav-item px-2">
-                  Business
+                Business
               </li>
               <li className="nav-item px-2">
-                  Entertainment
+                Entertainment
               </li>
               <li className="nav-item px-2">
-                  General
+                General
               </li>
               <li className="nav-item px-2">
-                  Health
+                Health
               </li>
               <li className="nav-item px-2">
-                  Science
+                Science
               </li>
               <li className="nav-item px-2">
-                  Sports
+                Sports
               </li>
               <li className="nav-item px-2">
-                  Technology
+                Technology
               </li>
-          <div className="flex justify-end items-center text-sm">
-            <div className="flex justify-start items-center mb-6  mr-4">
-              <ColorSchemeToggle />
-            </div>
-          </div>
+              <div className="flex justify-end items-center text-sm">
+                <div className="flex justify-start items-center mb-6  mr-4">
+                  <ColorSchemeToggle />
+                </div>
+              </div>
             </nav>
           </div>
         </Header>
-
-    
       </div>
-
       <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
     </>
   );
