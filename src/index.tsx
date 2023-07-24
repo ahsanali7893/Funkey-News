@@ -1,20 +1,56 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { useLocalStorage, useHotkeys } from "@mantine/hooks";
+import {
+  ColorScheme,
+  ColorSchemeProvider,
+  MantineProvider,
+} from "@mantine/core";
+import reportWebVitals from "./reportWebVitals";
+import ReactDOM from "react-dom/client";
+import React from "react";
+import App from "./App";
+import "./index.css";
 
+function MyApp() {
+  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
+    key: "mantine-color-scheme",
+    defaultValue: "light",
+    getInitialValueInEffect: true,
+  });
+
+  const toggleColorScheme = (value?: ColorScheme) =>
+    setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
+  useHotkeys([["mod+J", () => toggleColorScheme()]]);
+
+  return (
+    <ColorSchemeProvider
+      colorScheme={colorScheme}
+      toggleColorScheme={toggleColorScheme}
+    >
+      <MantineProvider
+        withGlobalStyles
+        withNormalizeCSS
+        theme={{
+          colorScheme,
+          components: {
+            Input: {
+              styles: (theme) => ({
+                input: { borderColor: "black" },
+                required: { display: "hidden" },
+              }),
+            },
+          },
+        }}
+      >
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>
+      </MantineProvider>
+    </ColorSchemeProvider>
+  );
+}
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+root.render(<MyApp />);
 reportWebVitals();

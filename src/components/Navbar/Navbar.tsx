@@ -1,20 +1,41 @@
-import { ActionIcon, ColorScheme, useMantineColorScheme, } from "@mantine/core";
+import {  Header, createStyles, } from "@mantine/core";
 import { useHotkeys, useLocalStorage } from "@mantine/hooks";
-import {BsMoonStars, BsSun} from 'react-icons/bs'
+
+import { ColorSchemeToggle } from "../common/ColorSchemeToggle";
 
 
-type Props = {};
 
-const Navbar = (props: Props) => {
+
+const HEADER_HEIGHT = 0;
+
+const useStyles = createStyles((theme) => ({
+  root: {
+    position: "relative",
+    zIndex: 1,
+    backgroundColor: "#22272B",
+  },
+
+  header: {
+    position: "sticky",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    height: "20%",
+    borderBottom: "0px",
+  },
+}));
+
+export default function Navbar() {
+  const { classes } = useStyles();
 
  
   
   return (
     <>
-      <div className="max-w-4xl mx-auto ">
-        <header className="text-gray-600 body-font border-y shadow-sm shadow-orange-400 ">
-          <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-            <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+      <div className="max-w-6xl mx-auto mb-10">
+        <Header height={HEADER_HEIGHT} className={`${classes.root} !border-b-0`} >
+          <div className="container mx-auto flex flex-wrap p-5 flex-col lg:flex-row items-center">
+            <a className="flex title-font font-medium items-center  mb-4 md:mb-0">
               <span className="ml-3 text-xl">Funkey-News</span>
             </a>
             <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center list-none ">
@@ -39,9 +60,14 @@ const Navbar = (props: Props) => {
               <li className="nav-item px-2">
                   Technology
               </li>
+          <div className="flex justify-end items-center text-sm">
+            <div className="flex justify-start items-center mb-6  mr-4">
+              <ColorSchemeToggle />
+            </div>
+          </div>
             </nav>
           </div>
-        </header>
+        </Header>
 
     
       </div>
@@ -51,4 +77,7 @@ const Navbar = (props: Props) => {
   );
 };
 
-export default Navbar;
+
+
+
+
