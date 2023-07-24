@@ -1,0 +1,32 @@
+import { ActionIcon, Group, useMantineColorScheme } from "@mantine/core";
+import { BsMoonStars, BsSun } from "react-icons/bs";
+
+
+export function ColorSchemeToggle() {
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+
+  return (
+    <Group position="center" mt="xl">
+      <ActionIcon
+        onClick={() => toggleColorScheme()}
+        size="xl"
+        sx={(theme) => ({
+          backgroundColor:
+            theme.colorScheme === "dark"
+              ? theme.colors.dark[6]
+              : theme.colors.gray[0],
+          color:
+            theme.colorScheme === "dark"
+              ? theme.colors.yellow[4]
+              : theme.colors.blue[6],
+        })}
+      >
+        {colorScheme === "dark" ? (
+          <BsSun size={20} />
+        ) : (
+          <BsMoonStars size={20}/>
+        )}
+      </ActionIcon>
+    </Group>
+  );
+}
