@@ -6,17 +6,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <Hero
-        image={""}
-        link={""}
-        title={""}
-        description={""}
-        rating={""}
-        author={{
-          name: "",
-          image: "",
-        }}
-      />
+      <Hero/>
     </>
   );
 }
