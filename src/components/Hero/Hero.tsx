@@ -70,7 +70,7 @@ export function Hero({
 
   return (
     <>
-    <div className='max-w-6xl'>
+    <div className='max-w-6xl mx-auto'>
     <div className=' py-44 w-64'>
     <Card withBorder radius="sm" className={cx(classes.card, className)} {...others}>
       <Card.Section>
