@@ -1,12 +1,7 @@
-import {  Header, createStyles, } from "@mantine/core";
-import { GiHamburgerMenu} from "react-icons/gi";
-
+import { Header, createStyles } from "@mantine/core";
 import { ColorSchemeToggle } from "../common/ColorSchemeToggle";
 import { useState } from "react";
 import Dropdown from "./Dropdown";
-
-
-
 
 const HEADER_HEIGHT = 0;
 
@@ -30,23 +25,22 @@ const useStyles = createStyles((theme) => ({
 export default function Navbar() {
   const { classes } = useStyles();
 
-  const [showMenu, setShowMenu] = useState(false);
-
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
-  };
-  
   return (
     <>
-     <div className="max-w-6xl mx-auto">
-        <Header height={HEADER_HEIGHT} className={`${classes.root} !border-b-0`} >
+      <div className="max-w-6xl mx-auto">
+        <Header
+          height={HEADER_HEIGHT}
+          className={`${classes.root} !border-b-0`}
+        >
           <div className="container mx-auto flex justify-between lg:flex-row border-b">
             <a className="flex title-font font-medium items-center  mb-4 md:mb-0">
               <span className="ml-3 text-xl">Funkey-News</span>
             </a>
-           
-            <nav className='md:ml-auto flex flex-wrap items-center text-base justify-center list-none'>
+
+            <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center list-none">
+              <div className="pr-9 sm:pr-4">
               <Dropdown/>
+              </div>
               <div className="flex justify-end  text-sm">
                 <div className="flex justify-start items-center mb-6  mr-4">
                   <ColorSchemeToggle />
@@ -59,9 +53,4 @@ export default function Navbar() {
       <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
     </>
   );
-};
-
-
-
-
-
+}

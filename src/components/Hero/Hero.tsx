@@ -69,7 +69,9 @@ export function Hero({
   const linkProps = { href: link, target: '_blank', rel: 'noopener noreferrer' };
 
   return (
-    <div className='max-w-5xl mx-auto py-44 w-64'>
+    <>
+    <div className='max-w-6xl'>
+    <div className=' py-44 w-64'>
     <Card withBorder radius="sm" className={cx(classes.card, className)} {...others}>
       <Card.Section>
         <a {...linkProps}>
@@ -111,5 +113,7 @@ export function Hero({
       </Group>
     </Card>
     </div>
+    </div>
+    </>
   );
 }
