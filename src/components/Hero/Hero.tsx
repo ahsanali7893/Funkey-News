@@ -83,7 +83,7 @@ export function Hero({
     rel: "noopener noreferrer",
   };
 
-  const fetchArticleAPI = process.env.REACT_APP_API_Article;
+  const fetchArticleAPI = process.env.REACT_APP_API_Articles;
   console.log(fetchArticleAPI, "fetchArticleAPI");
   const fetchRecord = async () => {
     try {
@@ -94,7 +94,7 @@ export function Hero({
       console.log(error);
     }
   };
-
+   console.log(fetchArticleAPI)
   const [record, setRecord] = useState<any>([]);
   const [page, setPage] = useState<any>(1);
 
