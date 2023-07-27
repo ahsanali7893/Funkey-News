@@ -1,6 +1,5 @@
 import { Header, createStyles } from "@mantine/core";
 import { ColorSchemeToggle } from "../common/ColorSchemeToggle";
-import { useState } from "react";
 import Dropdown from "./Dropdown";
 
 const HEADER_HEIGHT = 0;
