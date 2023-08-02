@@ -85,10 +85,10 @@ export function Hero({
 
   const fetchArticleAPI = process.env.REACT_APP_API_Articles;
   console.log(fetchArticleAPI, "fetchArticleAPI");
-  const fetchRecord = async () => {
+  const fetchRecord = async (_pageNumber: any) => {
     try {
       const response = await axios.get(`${fetchArticleAPI}`);
-      setRecord(response?.data);
+      setRecord(response?.data.article);
       console.log(response, "response");
     } catch (error) {
       console.log(error);
@@ -99,8 +99,16 @@ export function Hero({
   const [page, setPage] = useState<any>(1);
 
   useEffect(() => {
-    fetchRecord();
+    fetchRecord(page);
   }, [page]);
+
+  const handleNextPage = () => {
+    setPage((prevPage: number) => prevPage + 1);
+  };
+  
+  const handlePreviousPage = () => {
+    setPage((prevPage: number) => Math.max(1, prevPage - 1));
+  };
   return (
     <>
       {record.map((article: any) => (
@@ -168,6 +176,10 @@ export function Hero({
           </div>
         </div>
       ))}
+      <div>
+      <button onClick={handlePreviousPage}>Previous</button>
+      <button onClick={handleNextPage}>Next</button>
+      </div>
     </>
   );
 }
