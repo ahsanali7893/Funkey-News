@@ -100,8 +100,7 @@ export function Hero({
 
   useEffect(() => {
     fetchRecord();
-  }, [page]);
-
+  }, [page]);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
   return (
     <>
       {record.map((article: any) => (
