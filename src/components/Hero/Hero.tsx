@@ -123,7 +123,7 @@ export function Hero({
               >
                 <Card.Section>
                   <a {...linkProps}>
-                    <Image src={article.image} height={180} />
+                    <Image src={article.urlToImage} height={180} />
                   </a>
                 </Card.Section>
 
@@ -150,9 +150,9 @@ export function Hero({
 
                 <Group position="apart" className={classes.footer}>
                   <Center>
-                    {article.author?.image ? (
+                    {article.author?.urlToImage ? (
                       <Avatar
-                        src={article.author.image}
+                        src={article.author.urlToImage}
                         size={24}
                         radius="xl"
                         mr="xs"
