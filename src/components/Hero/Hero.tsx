@@ -107,7 +107,6 @@ export function Hero({
   const handlePreviousPage = () => {
     setPage((prevPage: number) => Math.max(1, prevPage - 1));
   };
-
   return (
     <>
       <div style={{ display: "flex", flexWrap: "wrap" }}>
@@ -180,7 +179,7 @@ export function Hero({
             </div>
           ))
         ) : (
-          <p>No articles found.</p>
+          <p className="text-center py-32">No articles found.</p>
         )}
         <div className="w-full mt-4 px-2 flex justify-between">
           <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" onClick={handlePreviousPage}>Previous</button>
