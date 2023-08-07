@@ -86,7 +86,7 @@ export function Hero({
   console.log(fetchArticleAPI, "fetchArticleAPI");
   const fetchRecord = async (_pageNumber: number) => {
     try {
-      const response = await axios.get(`${fetchArticleAPI}?page=${_pageNumber}`);
+      const response = await axios.get(`${fetchArticleAPI}`);
       setRecord(response?.data.articles);
       setPageCount(response?.data.total_pages);   
       setRecord((prevRecord) => [...prevRecord, fetchArticleAPI]);
@@ -186,7 +186,7 @@ export function Hero({
         ) : (
           <p className="text-center py-32">No articles found.</p>
         )}
-        <div className="w-full mt-4 px-2 flex justify-between">
+        <div className="w-full mt-4 px-2 flex justify-between max-w-screen-2xl mx-auto">
           <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" onClick={handlePreviousPage}>Previous</button>
           <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" onClick={handleNextPage}>Next</button>
         </div>
