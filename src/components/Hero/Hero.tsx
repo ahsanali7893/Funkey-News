@@ -80,13 +80,16 @@ export function Hero({
     target: "_blank",
     rel: "noopener noreferrer",
   };
+  const articlesPerPage = 6; 
 
   const fetchArticleAPI = process.env.REACT_APP_API_Articles;
   console.log(fetchArticleAPI, "fetchArticleAPI");
-  const fetchRecord = async (_pageNumber: any) => {
+  const fetchRecord = async (_pageNumber: number) => {
     try {
-      const response = await axios.get(`${fetchArticleAPI}`);
+      const response = await axios.get(`${fetchArticleAPI}?page=${_pageNumber}`);
       setRecord(response?.data.articles);
+      setPageCount(response?.data.total_pages);   
+      setRecord((prevRecord) => [...prevRecord, fetchArticleAPI]);
       console.log(response, "response");
     } catch (error) {
       console.log(error);
@@ -101,7 +104,7 @@ export function Hero({
   }, [page]);
 
   const handleNextPage = () => {
-    setPage((prevPage: number) => prevPage + 1);
+    setPage((prevPage: number) => prevPage + 6);
   };
 
   const handlePreviousPage = () => {
@@ -111,9 +114,11 @@ export function Hero({
     <>
       <div style={{ display: "flex", flexWrap: "wrap" }}>
         {record && record.length > 0 ? (
-          record.map((article: any) => (
+          record
+          .slice((page - 1) * articlesPerPage, page * articlesPerPage)
+          .map((article: any) => (
             <div key={article.id} className="w-full md:w-1/3 px-32">
-              <div className="py-44 w-64 ">
+              <div className="pt-44 w-64 ">
                 <Card
                   withBorder
                   radius="sm"
@@ -189,3 +194,7 @@ export function Hero({
     </>
   );
 }
+function setPageCount(_total_pages: any) {
+  throw new Error("Function not implemented.");
+}
+
