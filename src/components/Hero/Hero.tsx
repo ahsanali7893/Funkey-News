@@ -197,5 +197,3 @@ export function Hero({
 function setPageCount(_total_pages: any) {
   throw new Error("Function not implemented.");
 }
-
-       
