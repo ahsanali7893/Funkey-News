@@ -191,7 +191,7 @@ export function Hero({
         ) : (
           <p className="text-center py-32 mx-auto">No articles found.</p>
         )}
-        <div className="w-full mt-4 px-2 flex justify-between max-w-6xl mx-auto pt-40">
+        <div className="w-full mt-4 px-2 flex justify-between max-w-6xl mx-auto pt-40 pb-3">
           <button
             className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
             onClick={handlePreviousPage}
