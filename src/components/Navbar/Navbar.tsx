@@ -32,7 +32,7 @@ export default function Navbar() {
           className={`${classes.root} !border-b-0`}
         >
           <div className="container mx-auto flex justify-between lg:flex-row border-b">
-            <a className="flex title-font font-medium items-center  mb-4 md:mb-0">
+            <a className="flex title-font font-medium items-center mb-4 md:mb-0">
               <span className="ml-3 text-xl">Funkey-News</span>
             </a>
 
