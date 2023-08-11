@@ -38,9 +38,9 @@ export default function Navbar() {
 
             <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center list-none">
               <div className="pr-9 sm:pr-4">
-              <Dropdown/>
+                <Dropdown />
               </div>
-              <div className="flex justify-end  text-sm">
+              <div className="flex justify-end text-sm">
                 <div className="flex justify-start items-center mb-6  mr-4">
                   <ColorSchemeToggle />
                 </div>
@@ -49,7 +49,6 @@ export default function Navbar() {
           </div>
         </Header>
       </div>
-      
     </>
   );
 }
