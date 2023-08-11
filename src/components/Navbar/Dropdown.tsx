@@ -17,48 +17,47 @@ const Dropdown: React.FC = () => {
       </button>
       {isOpen && (
         <div className="absolute right-0 mt-2 py-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg">
-          
           <a
             href="#"
             className="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white"
           >
-                General
+            General
           </a>
           <a
             href="#"
             className="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white"
           >
-           Business
+            Business
           </a>
           <a
             href="#"
             className="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white"
           >
-           Entertainment
+            Entertainment
           </a>
           <a
             href="#"
             className="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white"
           >
-           Health
+            Health
           </a>
           <a
             href="#"
             className="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white"
           >
-           Science
+            Science
           </a>
           <a
             href="#"
             className="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white"
           >
-           Sports
+            Sports
           </a>
           <a
             href="#"
             className="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white"
           >
-           Technology
+            Technology
           </a>
         </div>
       )}

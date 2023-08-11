@@ -100,7 +100,7 @@ export function Hero({
 
   const [record, setRecord] = useState<any[]>([]);
   const [page, setPage] = useState<number>(1);
-
+  const [currentPage, setCurrentPage] = useState(1);
   useEffect(() => {
     fetchRecord(page);
   }, [page]);
@@ -119,7 +119,7 @@ export function Hero({
           record
             .slice((page - 1) * articlesPerPage, page * articlesPerPage)
             .map((article: any) => (
-              <div key={article.id} className="w-full md:w-1/3 px-32">
+              <div key={article.id} className="max-w-7xl mx-auto px-32">
                 <div className="pt-44 w-64 ">
                   <Card
                     withBorder
@@ -191,10 +191,11 @@ export function Hero({
         ) : (
           <p className="text-center py-32 mx-auto">No articles found.</p>
         )}
-        <div className="w-full mt-4 px-2 flex justify-between max-w-screen-2xl mx-auto">
+        <div className="w-full mt-4 px-2 flex justify-between max-w-6xl mx-auto pt-40">
           <button
             className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
             onClick={handlePreviousPage}
+            disabled={currentPage <= 0}
           >
             Previous
           </button>

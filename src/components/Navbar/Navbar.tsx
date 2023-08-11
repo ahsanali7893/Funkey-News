@@ -26,7 +26,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <Header
           height={HEADER_HEIGHT}
           className={`${classes.root} !border-b-0`}
