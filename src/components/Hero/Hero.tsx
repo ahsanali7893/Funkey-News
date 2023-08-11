@@ -119,7 +119,7 @@ export function Hero({
           record
             .slice((page - 1) * articlesPerPage, page * articlesPerPage)
             .map((article: any) => (
-              <div key={article.id} className="max-w-7xl mx-auto px-32">
+              <div key={article.id} className="max-w-7xl mx-auto sm:px-32">
                 <div className="pt-44 w-64 ">
                   <Card
                     withBorder
