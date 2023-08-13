@@ -21,7 +21,7 @@ export function Hero({
   author,
   rating,
   ...others
-}:any & ArticleCardProps){
+}: any & ArticleCardProps) {
   const articlesPerPage = 6;
 
   const fetchArticleAPI = process.env.REACT_APP_API_Articles;
@@ -63,13 +63,24 @@ export function Hero({
             <div key={article.id} className="max-w-7xl mx-auto lg:px-32">
               <div className="pt-44 w-64">
                 <div className="border rounded-md p-4">
-                  <a href={article.link} target="_blank" rel="noopener noreferrer">
-                    <img src={article.urlToImage} alt={article.title} className="h-48 w-full object-cover" />
+                  <a
+                    href={article.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={article.urlToImage}
+                      alt={article.title}
+                      className="h-48 w-full object-cover"
+                    />
                   </a>
 
                   <div className="flex justify-between mt-2">
                     <span className="text-sm font-medium">
-                      Rating: <span className="bg-gradient-to-r from-yellow-300 to-red-500">{article.rating}</span>
+                      Rating:{" "}
+                      <span className="bg-gradient-to-r from-yellow-300 to-red-500">
+                        {article.rating}
+                      </span>
                     </span>
 
                     <div className="flex space-x-2">
@@ -125,12 +136,12 @@ export function Hero({
                       rel="noopener noreferrer"
                       className="text-blue-500 hover:underline"
                     >
-                      {article.title.split(' ').slice(0, 2).join(' ')}...
+                      {article.title.split(" ").slice(0, 2).join(" ")}...
                     </a>
                   </h3>
 
                   <p className="text-sm text-gray-600 line-clamp-4 mt-2">
-                    {article.description.split(' ').slice(0, 13).join(' ')}...
+                    {article.description.split(" ").slice(0, 13).join(" ")}...
                   </p>
 
                   <div className="flex justify-between mt-3">
@@ -141,9 +152,7 @@ export function Hero({
                         className="w-6 h-6 rounded-full mr-1"
                       />
                     )}
-                    <span className="text-sm">
-                      {article.author?.name}
-                    </span>
+                    <span className="text-sm">{article.author?.name}</span>
                   </div>
                 </div>
               </div>
