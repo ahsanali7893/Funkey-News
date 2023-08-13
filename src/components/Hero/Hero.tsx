@@ -130,7 +130,7 @@ export function Hero({
                   </h3>
 
                   <p className="text-sm text-gray-600 line-clamp-4 mt-2">
-                    {article.description.split(' ').slice(0, 13).join(' ')}
+                    {article.description.split(' ').slice(0, 13).join(' ')}...
                   </p>
 
                   <div className="flex justify-between mt-3">
