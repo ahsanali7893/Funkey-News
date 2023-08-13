@@ -60,7 +60,7 @@ export function Hero({
         record
           .slice((page - 1) * articlesPerPage, page * articlesPerPage)
           .map((article: any) => (
-            <div key={article.id} className="max-w-7xl mx-auto sm:px-32">
+            <div key={article.id} className="max-w-7xl mx-auto lg:px-32">
               <div className="pt-44 w-64">
                 <div className="border rounded-md p-4">
                   <a href={article.link} target="_blank" rel="noopener noreferrer">
