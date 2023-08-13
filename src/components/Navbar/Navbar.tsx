@@ -41,7 +41,7 @@ export default function Navbar() {
                 <Dropdown />
               </div>
               <div className="flex justify-end text-sm">
-                <div className="flex justify-start items-center mb-6  mr-4">
+                <div className="flex justify-start items-center mb-6  ">
                   <ColorSchemeToggle />
                 </div>
               </div>

@@ -1,68 +1,52 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-const Dropdown: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Dropdown(props: any) {
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
-    setIsOpen((prevIsOpen) => !prevIsOpen);
+    setDropdownOpen(!isDropdownOpen);
+  };
+  const closeDropdown = () => {
+    setDropdownOpen(false);
   };
 
   return (
-    <div className="relative">
-      <button
-        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-        onClick={toggleDropdown}
-      >
-        News
-      </button>
-      {isOpen && (
-        <div className="absolute right-0 mt-2 py-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg">
-          <a
-            href="#"
-            className="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white"
+    <div>
+      <div className="relative inline-block text-left">
+        <button
+          type="button"
+          className="bg-gray-300 text-gray-700 py-2 px-4 rounded-lg shadow-md focus:outline-none focus:ring focus:border-blue-300"
+          id="dropdown-trigger"
+          onClick={toggleDropdown}
+        >
+          News
+        </button>
+        <ul
+          className={`${
+            isDropdownOpen ? "block" : "hidden"
+          } absolute z-10 mt-2 w-32 bg-white rounded-lg shadow-lg`}
+          id="dropdown-menu"
+        >
+          <li
+            className="py-1 px-3 hover:bg-gray-100 cursor-pointer"
+            onClick={closeDropdown}
           >
-            General
-          </a>
-          <a
-            href="#"
-            className="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white"
+            Item 1
+          </li>
+          <li
+            className="py-1 px-3 hover:bg-gray-100 cursor-pointer"
+            onClick={closeDropdown}
           >
-            Business
-          </a>
-          <a
-            href="#"
-            className="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white"
+            Item 2
+          </li>
+          <li
+            className="py-1 px-3 hover:bg-gray-100 cursor-pointer"
+            onClick={closeDropdown}
           >
-            Entertainment
-          </a>
-          <a
-            href="#"
-            className="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white"
-          >
-            Health
-          </a>
-          <a
-            href="#"
-            className="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white"
-          >
-            Science
-          </a>
-          <a
-            href="#"
-            className="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white"
-          >
-            Sports
-          </a>
-          <a
-            href="#"
-            className="block px-4 py-2 text-gray-800 hover:bg-blue-500 hover:text-white"
-          >
-            Technology
-          </a>
-        </div>
-      )}
+            Item 3
+          </li>
+        </ul>
+      </div>
     </div>
   );
-};
-
-export default Dropdown;
+}
