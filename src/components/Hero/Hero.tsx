@@ -125,7 +125,7 @@ export function Hero({
                       rel="noopener noreferrer"
                       className="text-blue-500 hover:underline"
                     >
-                      {article.title.split(' ').slice(0, 2).join(' ')}
+                      {article.title.split(' ').slice(0, 2).join(' ')}...
                     </a>
                   </h3>
 
