@@ -55,14 +55,14 @@ export function Hero({
   };
 
   return (
-    <div className=" max-w-screen-2xl mx-auto flex flex-wrap">
+    <div className=" max-w-screen-2xl mx-auto flex flex-wrap ">
       {record && record.length > 0 ? (
         record
           .slice((page - 1) * articlesPerPage, page * articlesPerPage)
           .map((article: any) => (
-            <div key={article.id} className="max-w-7xl mx-auto lg:px-32">
-              <div className="pt-44 w-64">
-                <div className="border rounded-md p-4">
+            <div key={article.id} className="max-w-7xl mx-auto lg:px-32 ">
+              <div className="pt-44 w-64 ">
+                <div className="border rounded-md p-4 ">
                   <a
                     href={article.link}
                     target="_blank"
@@ -165,14 +165,13 @@ export function Hero({
         <button
           className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
           onClick={handlePreviousPage}
-          disabled={currentPage <= 1}
+          disabled={currentPage <= 0}
         >
           Previous
         </button>
         <button
           className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
           onClick={handleNextPage}
-          disabled={currentPage >= pageCount}
         >
           Next
         </button>
